@@ -1,15 +1,22 @@
 import React from "react"
-import { Col ,Row} from "react-bootstrap"
-import '../assets/css/styles.css;
+import { Col ,Row,Button,Badge} from "react-bootstrap"
+import '../assets/css/styles.css';
 
-export const Product = ({title, image}) => {
 
+export const Product = ({item}) => {
+    const { title, image, price } = item;
     return (
         <Col xs={4}>
             <Row>
-                <Col>
-                    <div>{title}</div>
-                </Col>                
+                <Col xs={8}>
+                    <div className ="styles">{title}</div>
+                </Col>
+                <Col xs= {4}> 
+                <Button variant="primary">
+                        Precio <Badge bg="secondary">{price}</Badge>
+                        <span className="visually-hidden">$</span>
+                    </Button>
+                </Col>            
             </Row>
             <Row>
                 <Col xs={12}>
@@ -17,6 +24,5 @@ export const Product = ({title, image}) => {
                 </Col>
             </Row>
         </Col>
-
     )
 }

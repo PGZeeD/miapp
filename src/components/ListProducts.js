@@ -10,7 +10,9 @@ export const ListProducts = () => {
 
     return (
         <Row>
-            {products.map((product, index) => <Product key={index} title={product.title} image ={product.image}/>)}
+            {products.map((product, index) => (
+            <Product key={index}  item={product}/>
+            ))}
         </Row>
     )
 }
